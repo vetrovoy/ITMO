@@ -5,17 +5,18 @@
 /* Base */
 @import "base/normalize.css";
 @import "base/fonts.css";
+@import "base/base.css";
 @import "base/typography.css";
 @import "base/utilities.css";
 /* /Base */
 
 /* Components */
+@import "components/containers.css";
 @import "components/button.css";
 @import "components/form.css";
-@import "components/containers.css";
 /* /Components */
 
-/* Layout */
-@import "layout/header.css";
-@import "layout/footer.css";
-/* /Layout */
+/* Main */
+@import "main/header.css";
+@import "main/footer.css";
+/* /Main */

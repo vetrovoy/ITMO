@@ -1,23 +1,195 @@
-.form {
+.input,
+input {
+  outline: none;
+  display: block;
+  height: 60px;
+  padding: 0 25px;
+  border-radius: 35px;
+  background-color: $color-black;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  color: $color-white;
+  font-family: "Golos Text", sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+}
+
+/* The container must be positioned relative: */
+.select {
+  position: relative;
+  font-family: "Golos Text", sans-serif;
+}
+
+.select select {
+  display: none; /*hide original SELECT element: */
+}
+
+.select option {
+  color: $color-white;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+}
+
+.select-selected {
+  box-sizing: border-box;
+  background-color: $color-black;
+}
+
+/* Style the arrow inside the select element: */
+.select-selected:after {
+  content: "";
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='6' viewBox='0 0 13 6' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12.8761 0.8196C13.0795 1.08772 13.027 1.46997 12.7589 1.67338L7.91653 5.34689C7.07904 5.98223 5.92096 5.98223 5.08347 5.34689L0.241109 1.67338C-0.0270145 1.46997 -0.07948 1.08772 0.123924 0.8196C0.327328 0.551476 0.709577 0.499011 0.977702 0.702415L5.55565 4.17534C6.11398 4.5989 6.88602 4.5989 7.44435 4.17534L12.0223 0.702415C12.2904 0.499011 12.6727 0.551476 12.8761 0.8196Z' fill='white'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 13px;
+  height: 10px;
+}
+
+/* Point the arrow upwards when the select box is open (active): */
+.select-selected.select-arrow-active:after {
+  rotate: 180deg;
+}
+
+/* style the items (options), including the selected item: */
+.select-selected {
   display: flex;
-  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  color: rgba(255, 255, 255, 0.75);
+  padding: 0 25px;
+  border: 1px solid $color-black;
+  border-color: rgba(255, 255, 255, 0.75);
+  cursor: pointer;
+  border-radius: 35px;
+  height: 60px;
+  transition: background-color 0.2s ease-in-out;
 
-  &-control {
-    all: unset;
-    border-radius: 2px;
-    background-color: transparent;
-    padding-bottom: 9px;
-    padding-right: ;
-    color: $color-white;
-    border-bottom: 1px solid $color-white;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 120%;
-    flex-basis: 100%;
-
-    &::placeholder {
-      color: $color-white;
-    }
+  &:hover {
+    background-color: $color-white;
+    color: $color-black;
   }
+}
+
+.select-arrow-active {
+  border-bottom-color: $color-black;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.select-items div {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  padding: 0 25px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+    background-color: $color-white;
+    color: $color-black;
+  }
+}
+
+/* Style items (options): */
+.select-items {
+  position: absolute;
+  background-color: $color-black;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  height: 310px;
+  overflow-y: auto;
+  border-radius: 35px;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-top-color: $color-black;
+}
+
+/* Hide the items when the select box is closed: */
+.select-hide {
+  display: none;
+}
+
+/* Customize the label (the checkbox) */
+.checkbox {
+  display: flex;
+  align-items: center;
+
+  cursor: pointer;
+  position: relative;
+  padding-left: 35px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  transition: opacity 0.2s ease-in-out;
+
+  color: $color-white;
+
+  font-family: "Golos Text", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  height: 25px;
+}
+
+.checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 19px;
+  width: 19px;
+  border-radius: 4px;
+  border: 3px solid $color-black;
+}
+
+.checkbox div {
+  display: inline;
+  opacity: 0.75;
+}
+/* On mouse-over, add a grey background color */
+.checkbox:hover input ~ .checkmark {
+  opacity: 0.7;
+}
+/* When the checkbox is checked, add a blue background */
+.checkbox input:checked ~ .checkmark {
+  background-color: var(--color-green);
+  border-color: var(--color-green);
+}
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+/* Show the checkmark when checked */
+.checkbox input:checked ~ .checkmark:after {
+  display: block;
+  border-color: $color-black;
+}
+/* Style the checkmark/indicator */
+.checkbox .checkmark:after {
+  top: 50%;
+  left: 28%;
+  transform: translate(-50%, -50%);
+  rotate: 40deg;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
 }
