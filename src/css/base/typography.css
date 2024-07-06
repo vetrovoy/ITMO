@@ -1,10 +1,14 @@
 a,
 .link {
-  font-family: ALSGorizontVariable, sans-serif;
+  font-family: $font-heading;
   text-decoration: none;
   color: $color-white;
   transition: color 0.2s ease-in-out;
   font-size: 16px;
+
+  @media (max-width: 1230px) {
+    font-size: 14px;
+  }
 
   &:hover {
     text-decoration: underline;
@@ -12,28 +16,50 @@ a,
 }
 
 p,
-.paragraph, li {
+.paragraph,
+li {
   color: $color-white;
-  font-family: "Golos Text", sans-serif;
+  font-family: $font-text;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
+
+  @media (max-width: 1230px) {
+    font-size: 16px;
+  }
 }
 
 .paragraph {
   margin: 0;
 
+  &--opacity {
+    opacity: 0.6;
+  }
+
   &--lg {
     font-size: 22px;
+    font-family: $font-heading;
+
+    @media (max-width: 1230px) {
+      font-size: 18px;
+    }
   }
 
   &--sm {
     font-size: 16px;
+
+    @media (max-width: 1230px) {
+      font-size: 14px;
+    }
   }
 
   &--extra-sm {
     font-size: 14px;
+
+    @media (max-width: 1230px) {
+      font-size: 12px;
+    }
   }
 }
 
@@ -43,31 +69,62 @@ h3,
 h4,
 h5,
 .title {
-  font-family: ALSGorizontVariable, sans-serif;
+  font-family: $font-heading;
   color: $color-white;
   font-size: 48px;
   font-style: normal;
   font-weight: 750;
   line-height: 120%;
+
+  @media (max-width: 1230px) {
+    font-size: 37px;
+  }
 }
 
 .title {
   margin: 0;
 
+  &--heading {
+    margin-bottom: 30px;
+
+    @media (max-width: 990px) {
+      text-align: center;
+    }
+  }
+
   &--1 {
     font-size: 48px;
+
+    @media (max-width: 1230px) {
+      font-size: 37px;
+    }
   }
   &--2 {
     font-size: 37px;
+
+    @media (max-width: 1230px) {
+      font-size: 30px;
+    }
   }
   &--3 {
     font-size: 30px;
+    @media (max-width: 1230px) {
+      font-size: 20px;
+    }
   }
   &--4 {
     font-size: 20px;
+
+    @media (max-width: 1230px) {
+      font-size: 16px;
+    }
   }
   &--5 {
     font-size: 16px;
+
+    @media (max-width: 1230px) {
+      font-size: 14px;
+    }
   }
 }
 
@@ -78,4 +135,8 @@ h5,
   font-style: normal;
   font-weight: 700;
   line-height: 90%;
+
+  @media (max-width: 1230px) {
+    font-size: 40px;
+  }
 }

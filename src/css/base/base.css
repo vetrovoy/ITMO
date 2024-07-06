@@ -1,7 +1,7 @@
 body {
   background-color: $color-black-bg;
   color: $color-white;
-  font-family: ALSGorizontVariable, sans-serif;
+  font-family: $font-heading;
 }
 
 img {
@@ -9,7 +9,13 @@ img {
   height: auto;
 }
 
-.icon {
+* {
+  box-sizing: border-box;
+}
+
+.icon,
+.swiper-button-prev,
+.swiper-button-next {
   cursor: pointer;
   transition: opacity 0.2s ease-in-out;
 
@@ -18,3 +24,191 @@ img {
     opacity: 0.7;
   }
 }
+
+.circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+
+  &--white {
+    background-color: $color-white;
+  }
+
+  &--black {
+    background-color: $color-black;
+  }
+
+  &--green {
+    background-color: $color-green;
+  }
+
+  &--yellow {
+    background-color: $color-yellow;
+  }
+
+  &--violet {
+    background-color: $color-violet;
+  }
+
+  &--pink {
+    background-color: $color-pink;
+  }
+}
+
+.menu {
+  & > ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  & ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  & li {
+    position: relative;
+  }
+
+  & li > ul,
+  & li > ul:hover {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 2;
+  }
+
+  & li:hover > ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 20px;
+  }
+
+  & .icon {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    & svg {
+      rotate: 180deg;
+      transition: rotate 0.2s ease-in-out;
+    }
+
+    &:hover,
+    &.active {
+      & svg {
+        rotate: 0deg;
+      }
+    }
+  }
+}
+
+.content-splitted-4 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  @media (max-width: 990px) {
+    grid-template-columns: 1fr;
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+
+    @media (max-width: 990px) {
+      padding: 0;
+    }
+
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      background-color: $color-white;
+    }
+
+    &::after {
+      width: calc(100% - 20px);
+      height: 3px;
+    }
+
+    &::before {
+      height: calc(100% - 20px);
+      width: 3px;
+    }
+
+    @media (max-width: 990px) {
+      &::after,
+      &::before {
+        content: none;
+      }
+    }
+
+    &:nth-child(1) {
+      padding-left: 0;
+      padding-top: 0;
+
+      &::after {
+        left: 0;
+        bottom: 0;
+      }
+
+      &::before {
+        top: 0;
+        right: -3px;
+      }
+    }
+
+    &:nth-child(2) {
+      padding-right: 0;
+      padding-top: 0;
+
+      &::after {
+        right: 0;
+        bottom: 0;
+      }
+
+      &::before {
+        content: none;
+      }
+    }
+
+    &:nth-child(3) {
+      padding-left: 0;
+      padding-bottom: 0;
+
+      &::after {
+        content: none;
+      }
+
+      &::before {
+        bottom: 0;
+        right: -3px;
+      }
+    }
+
+    &:nth-child(4) {
+      padding-right: 0;
+      padding-bottom: 0;
+
+      &::after {
+        content: none;
+      }
+
+      &::before {
+        content: none;
+      }
+    }
+  }
+}
+

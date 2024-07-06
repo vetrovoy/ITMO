@@ -1,0 +1,116 @@
+.projects-slider {
+  background: $color-dark-grey;
+
+  &__heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+
+    @media (max-width: 768px) {
+      position: relative;
+      text-align: center;
+      justify-content: center;
+
+      & .title {
+        max-width: 320px;
+      }
+    }
+    
+  }
+
+  &__arrows {
+    display: flex;
+    gap: 20px;
+
+    & .swiper-button-prev,
+    & .swiper-button-next {
+      position: static;
+      width: 50px;
+      height: 50px;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    & .swiper-button-prev {
+      @media (max-width: 768px) {
+        position: absolute;
+        left: 0;
+      }
+    }
+
+    & .swiper-button-next {
+      @media (max-width: 768px) {
+        position: absolute;
+        right: 0;
+      }
+    }
+  }
+}
+
+.project-card {
+  display: flex;
+  background-color: $color-black-bg;
+  border-radius: 60px;
+  overflow: hidden;
+
+  @media (max-width: 990px) {
+    border-radius: 30px;
+  }
+
+  @media (max-width: 990px) {
+    flex-direction: column;
+  }
+
+  &__img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 60px;
+    background-color: $color-pink;
+    min-width: calc(50% - 5px);
+
+    @media (max-width: 990px) {
+      border-radius: 30px;
+    }
+
+    & img {
+      border-radius: 100%;
+      padding: 63px;
+
+      @media (max-width: 1230px) {
+        padding: 30px;
+      }
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 40px;
+
+    @media (max-width: 990px) {
+      padding: 0;
+      padding-top: 20px;
+    }
+  }
+
+  &__content {
+    & .title {
+      margin-bottom: 15px;
+    }
+
+    & .paragraph {
+      margin-bottom: 30px;
+
+      @media (max-width: 990px) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}

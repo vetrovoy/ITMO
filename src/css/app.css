@@ -20,3 +20,12 @@
 @import "main/header.css";
 @import "main/footer.css";
 /* /Main */
+
+/* Sections */
+@import "sections/hero.css";
+@import "sections/about.css";
+@import "sections/advantages.css";
+@import "sections/programs.css";
+@import "sections/projects.css";
+@import "sections/contacts.css";
+/* /Sections */

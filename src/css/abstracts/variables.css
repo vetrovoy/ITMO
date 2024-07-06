@@ -1,20 +1,26 @@
 :root {
-  --color-white: #FFFFFF;
-  --color-green: #BAFE00;
-  --color-violet: #9407FF;
-  --color-pink: #FF77FF;
-  --color-yellow: #FFFF00;
-  --color-red: #F03F37;
+  --color-white: #ffffff;
+  --color-green: #bafe00;
+  --color-violet: #9407ff;
+  --color-pink: #ff77ff;
+  --color-yellow: #ffff00;
+  --color-red: #f03f37;
   --color-dark-grey: #151514;
-  --color-black-bg: #0B0B0B;
+  --color-black-bg: #0b0b0b;
   --color-black: #000000;
+  --font-heading: ALSGorizontVariable, sans-serif;
+  --font-text: Golos Text, sans-serif;
 }
 
 $color-white: var(--color-white);
 $color-green: var(--color-green);
 $color-violet: var(--color-violet);
 $color-pink: var(--color-pink);
+$color-yellow: var(--color-yellow);
 $color-red: var(--color-red);
 $color-dark-grey: var(--color-dark-grey);
 $color-black-bg: var(--color-black-bg);
 $color-black: var(--color-black);
+
+$font-heading: var(--font-heading);
+$font-text: var(--font-text);

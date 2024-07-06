@@ -1,0 +1,30 @@
+.about {
+  & .title {
+    @media (max-width: 990px) {
+      text-align: center;
+    }
+  }
+  & .paragraph {
+    font-family: $font-heading;
+
+    @media (max-width: 990px) {
+      text-align: center;
+    }
+  }
+  
+  & .button {
+    margin-top: auto;
+
+    @media (max-width: 990px) {
+      margin-top: 20px;
+    }
+  }
+
+  &__img {
+    border-radius: 60px;
+
+    @media (max-width: 990px) {
+      border-radius: 30px;
+    }
+  }
+}

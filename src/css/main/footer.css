@@ -1,3 +1,115 @@
+.bottom {
+  display: flex;
+  gap: 40px;
+
+  & > * {
+    flex-basis: 50%;
+    height: 505px;
+
+    @media (max-width: 990px) {
+      flex-basis: auto;
+    }
+
+    @media (max-width: 568px) {
+      height: 280px;
+    }
+  }
+
+  @media (max-width: 990px) {
+    flex-direction: column;
+  }
+}
+
+.featured,
+.subscribe {
+  padding: 40px;
+  height: 100%;
+  border-radius: 45px;
+
+  @media (max-width: 990px) {
+    padding: 20px;
+    border-radius: 30px;
+  }
+}
+
+.featured {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-image: url("../images/featured/2024.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.subscribe {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: $color-dark-grey;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='416' height='254' viewBox='0 0 416 254' fill='none'%3E%3Cpath opacity='0.05' d='M5.02766 0C-17.6838 0 -34.9655 22.3107 -28.7052 44.2769C-12.4162 101.502 11.754 157.553 47.837 201.627C83.8998 245.681 132.706 277.617 195.107 283.96C215.873 286.067 233.783 269.147 233.783 248.599V207.605C233.783 205.031 235.526 203.228 237.511 203.147H238.362C245.534 203.147 260.243 212.124 273.209 226.086C284.528 238.629 294.534 252.297 303.072 266.877C309.292 277.698 320.901 284.243 333.239 284.243H382.593C407.188 284.243 423.639 256.482 411.605 234.961C392.723 201.181 355.039 167.745 336.177 151.068C370.72 113.154 393.614 71.8359 403.744 44.4187C411.402 23.7089 395.64 0.40528 373.354 0.40528H338.142C322.826 0.40528 308.563 7.86244 302.708 19.8182C275.255 76.0306 250.822 96.6796 233.601 111.533V35.2796C233.601 16.2315 217.798 0.567392 198.855 0.526864L137.163 0.425544C117.511 0.40528 105.335 24.6816 117.106 40.4267L129.019 56.3745V56.415C131.085 59.1101 132.159 62.3523 132.159 65.6756L132.402 129.305C107.827 103.387 81.1647 48.5323 73.1215 24.0736V24.0534C70.7959 17.0933 66.3476 11.0374 60.4021 6.73736C54.4566 2.4373 47.3131 0.10941 39.9761 0.0810562L5.02766 0Z' fill='white'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: left bottom;
+
+  & .title {
+    font-weight: 550;
+    margin-bottom: 30px;
+  }
+}
+
 .footer {
-  
+  margin-top: 60px;
+  padding: 15px 0;
+  border-top: 3px solid $color-white;
+
+  &__logo .logo,
+  &__logo .logo__img {
+    width: 100%;
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  &__menu {
+    & .menu {
+      margin-bottom: -20px;
+    }
+
+    & .menu ul {
+      display: block;
+      column-count: 4;
+      gap: 20px;
+
+      @media (max-width: 990px) {
+        column-count: 2;
+      }
+    }
+
+    & .menu li {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 40px;
+
+    @media (max-width: 990px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    & > * {
+      flex-basis: 50%;
+
+      @media (max-width: 990px) {
+        flex-basis: auto;
+        width: 100%;
+      }
+    }
+  }
 }
