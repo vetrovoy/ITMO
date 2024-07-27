@@ -4,6 +4,47 @@
     flex-direction: column;
     gap: 30px;
   }
+
+  &__row {
+    display: flex;
+    gap: 70px;
+    margin-bottom: 30px;
+
+    @media (max-width: 990px) {
+      flex-direction: column;
+    }
+
+    & > * {
+      flex-basis: 50%;
+
+      @media (max-width: 990px) {
+        flex-basis: 100%;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &__socials {
+    margin-top: auto;
+  }
+}
+
+.contacts-heading .content-splitted-4 {
+  & .title--2 {
+    margin-bottom: 40px;
+  }
+
+  & .content-splitted-4__item:nth-child(3)::after {
+    display: none;
+  }
+  & .content-splitted-4__item:nth-child(3)::before {
+    display: none;
+  }
 }
 
 .contact-card {
@@ -55,7 +96,12 @@
   &__text {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 2px;
+
+    & .title--1,
+    .title--4:last-child {
+      margin-top: 8px;
+    }
   }
 
   &__img {
@@ -80,5 +126,32 @@
   @media (max-width: 990px) {
     width: 250px;
     height: 250px;
+  }
+}
+
+.questions {
+  display: flex;
+  gap: 40px;
+
+  @media (max-width: 990px) {
+    flex-direction: column;
+  }
+  
+
+  & > * {
+    flex-basis: 50%;
+
+    @media (max-width: 990px) {
+      flex-basis: 100%;
+    }
+  }
+
+  &-img {
+    position: relative;
+    &__svg {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
   }
 }

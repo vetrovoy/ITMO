@@ -31,9 +31,13 @@
 
 
 .container {
-  max-width: 1540px;
+  max-width: 1570px;
   margin-inline: auto;
   padding-inline: 15px;
+
+  &--dark-grey {
+    background-color: $color-dark-grey;
+  }
 }
 
 .container > .button {

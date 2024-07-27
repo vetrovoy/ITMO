@@ -1,3 +1,43 @@
+.form {
+  padding: 40px;
+  background-color: $color-violet;
+  border-radius: 40px;
+
+  & .title {
+    margin-bottom: 30px;
+  }
+
+  & .input {
+    margin-bottom: 20px;
+    width: 100%;
+    background-color: transparent;
+    color: $color-white;
+    &::placeholder {
+      color: $color-white;
+      opacity: 0.6;
+    }
+  }
+
+  & .select .select-selected {
+    margin-bottom: 20px;
+    background-color: transparent;
+  }
+
+  & .checkbox {
+    margin-bottom: 15px;
+  }
+
+  & .button {
+    margin-top: 15px;
+    border-radius: 300px;
+    background: rgba(255, 255, 255, 0.75);
+  }
+
+  @media (max-width: 768px) {
+    padding: 20px;
+    border-radius: 20px;
+  }
+}
 .input,
 input {
   outline: none;

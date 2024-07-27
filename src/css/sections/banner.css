@@ -1,0 +1,77 @@
+.banner {
+  position: relative;
+  padding: 40px;
+
+  @media (max-width: 1230px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  & > *:not(.banner__svg):not(.banner__name) {
+    position: relative;
+    z-index: 2;
+  }
+
+  @media (max-width: 990px) {
+    padding: 20px;
+  }
+
+  & .title {
+    margin-bottom: 20px;
+  }
+
+  &__svg {
+    position: absolute;
+    top: 0;
+    left: -15px;
+
+    @media (max-width: 1230px) {
+      display: none;
+    }
+  }
+
+  &__name {
+    position: absolute;
+    left: 25px;
+    top: 40px;
+    text-transform: uppercase;
+    opacity: 0.7;
+    font-family: $font-heading;
+
+    @media (max-width: 1230px) {
+      position: static;
+    }
+  }
+
+  &__content {
+    max-width: 760px;
+    width: 100%;
+    margin: 0 auto;
+
+    @media (max-width: 768px) {
+      text-align: center;
+    }
+  }
+
+  &__desc {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+
+  &__text {
+    max-width: 360px;
+
+    @media (max-width: 768px) {
+      max-width: 100%;
+    }
+  }
+}

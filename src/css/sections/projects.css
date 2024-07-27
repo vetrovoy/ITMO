@@ -1,6 +1,10 @@
 .projects-slider {
   background: $color-dark-grey;
 
+  &-current {
+    background: none;
+  }
+
   &__heading {
     display: flex;
     justify-content: space-between;
@@ -16,7 +20,6 @@
         max-width: 320px;
       }
     }
-    
   }
 
   &__arrows {
@@ -113,4 +116,62 @@
       }
     }
   }
+}
+
+.projects-slider-current {
+  & .button {
+    margin-top: 30px;
+  }
+}
+
+.projects-current-card {
+  height: 565px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 40px;
+  padding: 40px;
+  border: 3px solid rgba(255, 255, 255, 0.25);
+
+  @media (max-width: 990px) {
+    border-radius: 20px;
+    padding: 20px;
+  }
+}
+
+.projects-detail {
+  &-hero {
+    &__content {
+      display: flex;
+      gap: 40px;
+
+      @media (max-width: 990px) {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      & > * {
+        flex-basis: 50%;
+      }
+    }
+
+    &__detail {
+      padding: 40px;
+      border-radius: 45px;
+      background-color: $color-dark-grey;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+
+      @media (max-width: 990px) {
+        padding: 20px;
+        border-radius: 30px;
+        gap: 20px;
+      }
+    }
+  }
+}
+
+.projects-slider-advantages-detail {
+  background: none;
 }

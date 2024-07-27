@@ -1,0 +1,60 @@
+.team {
+  &__tabs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    overflow-x: auto;
+
+    & .tabs__tab {
+      white-space: nowrap;
+    }
+  }
+
+  &__count {
+    @media (max-width: 1230px) {
+      display: none;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px 20px;
+    margin-bottom: 50px;
+
+    @media (max-width: 990px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &-card {
+    &__img {
+      border-radius: 20px;
+      overflow: hidden;
+
+      & img {
+        transition: transform 0.5s ease-in-out;
+      }
+
+      &:hover {
+        & img {
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    &__name {
+      margin-top: 15px;
+      font-family: $font-heading;
+    }
+
+    &__position {
+      margin-top: 5px;
+    }
+  }
+}

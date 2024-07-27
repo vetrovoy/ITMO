@@ -22,6 +22,7 @@ img {
   &:active,
   &:hover {
     opacity: 0.7;
+    text-decoration: none;
   }
 }
 
@@ -32,6 +33,10 @@ img {
   width: 45px;
   height: 45px;
   border-radius: 50%;
+
+  &--dark-grey {
+    background-color: $color-dark-grey;
+  }
 
   &--white {
     background-color: $color-white;
@@ -80,9 +85,13 @@ img {
     display: none;
     position: absolute;
     top: 100%;
-    left: 0;
+    left: -20px;
     right: 0;
     z-index: 2;
+    background-color: $color-black-bg;
+    min-width: 200px;
+    padding: 20px;
+    border-radius: 4px;
   }
 
   & li:hover > ul {
@@ -117,6 +126,7 @@ img {
 
   @media (max-width: 990px) {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   &__item {
@@ -212,3 +222,62 @@ img {
   }
 }
 
+.collapse {
+  position: relative;
+  padding: 20px;
+  padding-bottom: 0;
+  border-radius: 50px;
+  background: $color-dark-grey;
+  transition: background-color 0.2s ease-in-out;
+  cursor: pointer;
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 25px;
+    right: 20px;
+    z-index: 1;
+    width: 15px;
+    height: 15px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='8' viewBox='0 0 13 8' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12.8761 0.371381C13.0795 0.784373 13.027 1.37315 12.7589 1.68646L8.28069 6.91925C7.3452 8.01237 5.6548 8.01238 4.71931 6.91925L0.241109 1.68646C-0.0270147 1.37315 -0.0794802 0.784373 0.123923 0.371381C0.327328 -0.041611 0.709578 -0.122424 0.977701 0.19088L5.31287 5.25655C5.93653 5.9853 7.06347 5.9853 7.68713 5.25655L12.0223 0.19088C12.2904 -0.122424 12.6727 -0.041611 12.8761 0.371381Z' fill='white'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: rotate 0.2s ease-in-out, top 0.2s ease-in-out;
+  }
+
+  &:hover {
+    background-color: $color-violet;
+  }
+
+  &:hover::after {
+    rotate: 180deg;
+    top: 20px;
+  }
+
+  &__title {
+    padding-bottom: 20px;
+  }
+
+  &__content {
+    display: none;
+
+    padding-bottom: 20px;
+    gap: 20px;
+
+    @media (max-width: 768px) {
+      flex-wrap: wrap;
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+  }
+
+  &--active {
+    background-color: $color-violet;
+    border-radius: 20px;
+
+    & .collapse__content {
+      display: inline-flex;
+    }
+  }
+}

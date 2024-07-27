@@ -101,6 +101,21 @@ a.button:hover {
   background-color: $color-violet;
   border-radius: 300px;
 
+  &--yellow {
+    background-color: $color-yellow;
+    color: $color-black;
+  }
+
+  &--green {
+    background-color: $color-green;
+    color: $color-black;
+  }
+
+  &--pink {
+    background-color: $color-pink;
+    color: $color-black;
+  }
+
   @media (max-width: 990px) {
     font-size: 14px;
     height: 36px;

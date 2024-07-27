@@ -24,8 +24,14 @@
 /* Sections */
 @import "sections/hero.css";
 @import "sections/about.css";
+@import "sections/about-hero.css";
 @import "sections/advantages.css";
 @import "sections/programs.css";
 @import "sections/projects.css";
 @import "sections/contacts.css";
+@import "sections/banner.css";
+@import "sections/team.css";
+@import "sections/history.css";
+@import "sections/partners.css";
+@import "sections/equipment.css";
 /* /Sections */
